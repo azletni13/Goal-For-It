@@ -57,6 +57,10 @@ input.inputBox {
   width: 51%;
 }
 
+.form-group .inputBox{
+  box-shadow: 6px 2px 2px #888888;
+}
+
 #formControlsSelect {
   width: 50%;
   margin-left: 25%;
@@ -121,6 +125,7 @@ div.App-Bar {
 
 #notificationList {
   border: 1px solid lightgrey;
+  box-shadow: 6px 2px 2px #888888;
   border-radius: 5px;
   width: 50%;
   display: inline-block;
@@ -128,6 +133,7 @@ div.App-Bar {
   position: absolute;
   left: 5%;
   background-color: white;
+  margin-bottom: 5%;
 }
 
 .page-header {
@@ -154,6 +160,7 @@ div.App-Bar {
 .leaderBoard {
   right: 4%;
   text-align: center;
+  box-shadow: 6px 2px 2px #888888;
 }
 /*checkbox*/
 .checkbox div {
