@@ -32,21 +32,14 @@ class GroupList extends Component {
   sendUsername = (member) => {
     if(member.id === 1){
       this.props.fetchFriendGoals(1)
-<<<<<<< HEAD
-=======
       this.props.resetGoalIndex()
-
->>>>>>> d93642dfaa0e4421e86f74dfc9d72932e431800f
     }else if(member.id === 2){
       this.props.fetchFriendGoals(2)
       this.props.resetGoalIndex()
 
     }else if(member.id === 3){
       this.props.fetchFriendGoals(3)
-<<<<<<< HEAD
-=======
       this.props.resetGoalIndex()
->>>>>>> d93642dfaa0e4421e86f74dfc9d72932e431800f
     }
   }
 

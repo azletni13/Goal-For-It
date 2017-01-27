@@ -8,7 +8,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import muiTheme from '../components/MuiTheme'
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
-import { fetchGoal, fetchGoals, fetchFriendGoals, checkedGoal, openAddGoalDialog, closeAddGoalDialog, handleGoalInput, showPreviousGoal, showNextGoal } from "../actions/goalActions"
+import { fetchGoal, fetchGoals, fetchFriendGoals, checkedGoal, openAddGoalDialog, closeAddGoalDialog, handleGoalInput, showPreviousGoal, showNextGoal, deleteGoal } from "../actions/goalActions"
 import { fetchUser } from "../actions/userActions"
 import { addMilestones, openAddMilestonesDialog, closeAddMilestonesDialog, handleMilestoneInput, handleMilestonesInput, addMilestoneRow} from "../actions/milestoneActions"
 import { addSteps, openAddStepsDialog, closeAddStepsDialog, handleStepInput, handleStepsInput, selectMilestone } from "../actions/stepActions"
@@ -16,6 +16,7 @@ import { addNotif } from "../actions/groupActions"
 import { moneyGoal, moneyMile, moneyStep } from "../actions/moneyActions"
 import List from 'material-ui/List/List';
 import ListItem from 'material-ui/List/ListItem';
+import FlatButton from 'material-ui/FlatButton';
 
 
 
@@ -72,19 +73,31 @@ class Goal_page extends Component {
     this.props.fetchUser(this.props.user.currentUser.userId);
   }
 
+  deleteGoal = () => {
+    console.log('goal ID', this.props.goal.goal_id)
+    this.props.deleteGoal(this.props.goal.goal_id)
+  }
+
 
   render() {
     let g = this.props.goal;
     return (
       <div>
        <Nav />
-       <main className="container">
-         <div className="left-column">
+        <main className="container">
+        <div className="left-column">
 
-         </div>
+        </div>
 
-         <article className="goal">
-           <h2 className="creator-info">{`${this.props.goal.username}${'\''}s Goal:`}</h2>
+        <article className="goal">
+          <MuiThemeProvider muiTheme={muiTheme}>
+            <FlatButton
+              label="Delete Goal"
+              secondary={true}
+              onTouchTap={this.deleteGoal}
+              />
+          </MuiThemeProvider>
+          <h2 className="creator-info">{`${this.props.goal.username}${'\''}s Goal:`}</h2>
             <img className="trophy" src="../../images/trophy2.jpg" alt="milestone" height="100" width="100"/>
             <h1 className="goal-title">
               <MuiThemeProvider muiTheme={muiTheme}>
@@ -161,6 +174,7 @@ const mapDispatchToProps = (dispatch) => {
       moneyGoal,
       showPreviousGoal,
       showNextGoal,
+      deleteGoal
     }, dispatch);
 }
 

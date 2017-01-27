@@ -29,7 +29,7 @@ export function fetchFriendGoals(friendId) {
 }
 
 
-export function resetGoalIndex() {  
+export function resetGoalIndex() {
   return {
     type: "RESET_GOAL_INDEX",
   };
@@ -57,6 +57,9 @@ export function updateGoal(id, text) {
 }
 
 export function deleteGoal(id) {
+  const url = `http://localhost:8080/api/goals/${id}`
+  console.log('GOAL ID', id)
+  axios.delete(url)
   return { type: 'DELETE_GOAL', payload: id}
 }
 

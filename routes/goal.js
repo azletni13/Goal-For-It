@@ -131,6 +131,14 @@ module.exports = (knex) => {
       });
     })
 
+  // router.options('/:goal_id', cors())
+
+  router.delete('/:goal_id', cors(), jsonParser, (req, res) => {
+    // console.log(req.params)
+    res.send('delete request')
+
+  })
+
 
   return router;
 };
