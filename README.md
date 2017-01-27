@@ -19,5 +19,5 @@ You will also see any lint errors in the console.
 
 Runs the back-end server.
 
-Login: Dwight Schrute
+Login: Dwight Schrute <br>
 Password: password
