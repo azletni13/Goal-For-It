@@ -48,7 +48,6 @@ export function fetchMoney(userId) {
 }
 
 export function moneyGoal(userId, completed, groupMoneyValue, userMoneyValue) {
-  console.log('MONEY REDUCER', completed)
   const url = `http://localhost:8080/api/users/${userId}`
   if(!completed){
     let money = {groupMoney: groupMoneyValue - 10, userMoney: userMoneyValue + 10}
@@ -61,12 +60,10 @@ export function moneyGoal(userId, completed, groupMoneyValue, userMoneyValue) {
 }
 
 export function moneyMilestone(userId, completed, groupMoneyValue, userMoneyValue) {
-  console.log('groupMoneyValue', groupMoneyValue)
-  console.log('USERMoneyValue', userMoneyValue)
-  const url = `http://localhost:8080/api/users/${userId}`
+  const url = `http://localhost:8080/api/users/${userId}`;
   if(!completed){
-    let money = {groupMoney: groupMoneyValue - 5, userMoney: userMoneyValue + 5}
-    axios.put(url, money)
+    let money = {groupMoney: groupMoneyValue - 5, userMoney: userMoneyValue + 5};
+    axios.put(url, money);
   }
   return {
     type: "MONEY_MILESTONE",
@@ -75,12 +72,10 @@ export function moneyMilestone(userId, completed, groupMoneyValue, userMoneyValu
 }
 
 export function moneyStep(userId, completed, groupMoneyValue, userMoneyValue) {
-  console.log('groupMoneyValue', groupMoneyValue)
-  console.log('USERMoneyValue', userMoneyValue)
-  const url = `http://localhost:8080/api/users/${userId}`
+  const url = `http://localhost:8080/api/users/${userId}`;
   if(!completed){
-    let money = {groupMoney: groupMoneyValue - 1, userMoney: userMoneyValue + 1}
-    axios.put(url, money)
+    let money = {groupMoney: groupMoneyValue - 1, userMoney: userMoneyValue + 1};
+    axios.put(url, money);
   }
   return {
     type: "MONEY_STEP",

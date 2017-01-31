@@ -74,7 +74,6 @@ class Goal_page extends Component {
   }
 
   deleteGoal = () => {
-    console.log('goal ID', this.props.goal.goal_id)
     this.props.deleteGoal(this.props.goal.goal_id)
   }
 
@@ -92,10 +91,11 @@ class Goal_page extends Component {
         <article className="goal">
           <MuiThemeProvider muiTheme={muiTheme}>
             <FlatButton
+              className="delete-btn"
               label="Delete Goal"
               secondary={true}
               onTouchTap={this.deleteGoal}
-              />
+            />
           </MuiThemeProvider>
           <h2 className="creator-info">{`${this.props.goal.username}${'\''}s Goal:`}</h2>
             <img className="trophy" src="../../images/trophy2.jpg" alt="milestone" height="100" width="100"/>
@@ -110,11 +110,11 @@ class Goal_page extends Component {
             </MuiThemeProvider>
             <MuiThemeProvider style={styles.block}>
               <Checkbox
-              className='checkbox'
-              style={styles.checkbox}
-              onCheck={this.handleChange}
-              checked={g.goal_checked}
-              disabled={(this.props.goal.username === this.props.user.currentUser.username ? false : true)}
+                className='checkbox'
+                style={styles.checkbox}
+                onCheck={this.handleChange}
+                checked={g.goal_checked}
+                disabled={(this.props.goal.username === this.props.user.currentUser.username ? false : true)}
               />
             </MuiThemeProvider>
           </h1>

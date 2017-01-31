@@ -4,7 +4,6 @@ import axios from "axios"
 export function fetchMilestones() {
   const url = "http://localhost:8080/api/goals/1";
   const request = axios.get(url);
-  console.log("request", request);
   return {
     type: "FETCH_GOALS",
     payload: request

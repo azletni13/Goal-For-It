@@ -12,13 +12,14 @@ const session     = require('express-session');
 
 const knexConfig  = require('./knexfile');
 const knex        = require('knex')(knexConfig[ENV]);
-const cors        = require('cors')
+const cors        = require('cors');
 const userRoutes  = require('./routes/users.js');
 const loginRoutes = require('./routes/register.js');
 const goalRoutes  = require('./routes/goal.js');
 const groupRoutes = require('./routes/group.js');
-const mileRoutes  = require('./routes/mile.js')
-const stepRoutes  = require('./routes/step.js')
+const mileRoutes  = require('./routes/mile.js');
+const stepRoutes  = require('./routes/step.js');
+const stripe      = require('stripe')('sk_test_68kqg8Ta2j7AMWs6MECWUPaw');
 
 
 //allows react server to perform requests to this server(api)

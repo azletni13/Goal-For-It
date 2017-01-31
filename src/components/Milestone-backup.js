@@ -13,7 +13,6 @@ const style = {
 class Milestone extends Component {
 
   handleAddStep = (e) => {
-    console.log(this.props.milestoneIndex)
     this.props.addStep(this.props.milestone)
   }
 

@@ -47,7 +47,6 @@ export default function reducer(state = defaultState, action) {
       }
 
       case "MONEY_GOAL": {
-        console.log('MONEY GOAL', action.payload)
         if(action.payload && state.groupMoney !== 0) {
           return {
             ...state,

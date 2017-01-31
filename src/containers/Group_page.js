@@ -42,8 +42,6 @@ class Group_page extends Component {
   }
 
   render() {
-    console.log('GROUP PAG USERS', this.props.group)
-
     return (
       <div className="group">
         <Nav id="nav"/>

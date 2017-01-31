@@ -1,9 +1,9 @@
-  const defaultState = {
-    goal: { milestones: [] },
-    goals: [],
-    goalIndex: 0,
-    error: null
-  };
+const defaultState = {
+  goal: { milestones: [] },
+  goals: [],
+  goalIndex: 0,
+  error: null
+};
 
 export default function reducer(state = defaultState, action) {
 //state argument is not application state, only the state this reducer is

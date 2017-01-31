@@ -333,6 +333,11 @@ article.goal {
   text-align: center;
 }
 
+.delete-btn {
+  right: 200px;
+  bottom: 200px;
+  position: absolute !important;
+}
 
 
 div.milestone-box {

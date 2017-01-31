@@ -19,7 +19,6 @@ export function addSteps(steps, milestoneIndex, newMilestones, milestoneIds) {
     newSteps[i].step = steps[i]
     newSteps[i].milestone_id = milestoneIds[milestoneIndex[i]]
   })
-  console.log('newSteps are', newSteps)
   const res = axios.post(url, newSteps)
   return {
     type: 'ADD_STEPS',

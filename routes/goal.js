@@ -134,7 +134,9 @@ module.exports = (knex) => {
   // router.options('/:goal_id', cors())
 
   router.delete('/:goal_id', cors(), jsonParser, (req, res) => {
-    // console.log(req.params)
+    console.log(req.params.goal_id)
+    knex('goals')
+      .where()
     res.send('delete request')
 
   })
